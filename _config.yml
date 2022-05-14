@@ -29,8 +29,7 @@ twitter_username: dendi239
 github_username:  dendi239
 
 # Build settings
-remote_theme: pages-themes/merlot@v0.2.0
-# theme: jekyll-theme-leap-day
+theme: minima
 
 plugins:
 - jekyll-feed
