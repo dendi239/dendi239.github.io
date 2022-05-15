@@ -7,10 +7,12 @@ layout: home
 
 Here're lists of posts groupped by tags:
 
-{% for tag in site.tags %}
-  {% for page in site.pages %}
-    {% unless page.main_tag == tags[0] %}
+{% for page in site.pages %}
+  {% if page.main_tag %}
+  {% for tag in site.tags %}
+    {% if page.main_tag == tag[0] %}
 - [{{ tag[0] }}]({{ page.url }})
-    {% endunless %}
+    {% endif %}
   {% endfor %}
+  {% endif %}
 {% endfor %}
