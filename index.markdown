@@ -4,3 +4,13 @@
 
 layout: home
 ---
+
+Here're lists of posts groupped by tags:
+
+{% for tag in site.tags %}
+  {% for page in site.pages %}
+    {% unless page.main_tag == tags[0] %}
+- [{{ tag[0] }}]({{ page.url }})
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
