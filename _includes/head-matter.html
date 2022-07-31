@@ -11,42 +11,18 @@
     {% if page.syntax %}<link rel='stylesheet' type='text/css' href='/css/code.css'>{% endif %}
     <meta name="description" content="{% if page.description %}{{ page.description }}
     {% else %}{{ site.description }}{% endif %}">
-    <meta name="author" content="Derek Kedziora">
+    <meta name="author" content="Denys Smirnov">
     <link rel="canonical" href="{% if page.canonical %}{{ site.url }}{{ page.canonical }}{% else %}{{ page.url | absolute_url }}{% endif %}">
     <meta name="generator" content="Jekyll" />
     
     <!-- OG metadata --> 
-    <meta property="og:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
-    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <meta property="og:image" content="{% if page.social-media-image %}{{ page.social-media-image}}{% else %}https://res.cloudinary.com/derekkedziora/image/upload/v1622372311/Social%20Media%20Pictures/desert-picture-1080x608_on9hpv.jpg{% endif %}"/>
-    <meta property="og:locale" content="{% if page.post-lang %}{{page.post-lang}}{% else %}en_US{% endif %}">
-    <meta property="og:type" content="{% if page.og-type %}{{page.og-type}}{% else %}website{% endif %}"/>
-    <meta property="og:url" content="{{ page.url | absolute_url }}"/>
-    <meta property="og:site_name" content="{{ site.title }}">
+        <!-- TODO-->
 
     <!-- Twitter Card --> 
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:creator" content="@derekkedziora">
-    <meta name="twitter:title" content="{%- if page.title -%}{{ page.title }}{%- else -%}{{ site.title }}{%- endif -%}"/>
-    <meta name="twitter:description" content="{%- if page.description -%}{{ page.description }}{%- else -%}{{ site.description }}{%- endif -%}"/>
-    <meta property="og:url" content="{{ page.url | absolute_url }}" />
-    <meta name="twitter:image" content="https://res.cloudinary.com/derekkedziora/image/upload/v1622367103/Social%20Media%20Pictures/desert-picture-540_namxrn.png"/>
-    <meta name="twitter:dnt" content="on">    
-
+        <!-- TODO-->
     <!-- favicon and iOS shortcut icon -->
-    <link rel="icon" href="https://res.cloudinary.com/derekkedziora/image/upload/v1610111368/derek_a2bdnp.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/derekkedziora/image/upload/v1622370380/Social%20Media%20Pictures/desert-picture-180_ahwvea.png">
-
+        <!-- TODO-->
     <!-- RSS feed --> 
-    <link type="application/atom+xml" rel="alternate" href="https://derekkedziora.com/feed.xml" title="Derek Kedziora | All Posts" />
-    <link type="application/atom+xml" rel="alternate" href="https://derekkedziora.com/feed/notes.xml" title="Derek Kedziora | Notes" />
-    
-    {% if page.index %}
-    <!-- validation codes --> 
-    <meta name="msvalidate.01" content="DD422C46C600FB27874DC8A734B7E69B" />
-    <meta name="msvalidate.01" content="F79BCE74986BBE2341F87E29F05E8D77" />
-    <meta name="yandex-verification" content="9f5ad4f35b68f877" />
-    <meta name="pocket-site-verification" content="d39441cb7f07095015ea5739317c04" />
-    <meta name="have-i-been-pwned-verification" content="7104755e9340c84dc109a8631199a889">
-    {% endif %}
+    <link type="application/atom+xml" rel="alternate" href="https://dendi239.github.io/feed.xml" title="Denys Smirnov | All Posts" />
+    <link type="application/atom+xml" rel="alternate" href="https://dendi239.github.io/feed/notes.xml" title="Denys Smirnov | Notes" />
 </head>
