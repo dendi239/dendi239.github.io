@@ -31,9 +31,35 @@ github_username:  dendi239
 # Build settings
 theme: minima
 
+permalink: blog/:title
+show_drafts: true
+timezone: Europe/London
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      blogpost: true
+      layout: post
+      og-type: article
+      permalink: /blog/:title
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page    
+
+collections:
+  pages:
+    output: true
+
 plugins:
 - jekyll-feed
-- jekyll-remote-theme # add this line to the plugins list if you already have one
 
 
 # Exclude from processing.
