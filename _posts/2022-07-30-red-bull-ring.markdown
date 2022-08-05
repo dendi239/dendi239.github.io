@@ -2,6 +2,7 @@
 layout: post
 title:  I have been to redbull ring
 date:   2022-07-30 12:42:35 +0200
+tags:   travel
 ---
 
 ## Since time immemorial

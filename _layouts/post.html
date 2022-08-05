@@ -1,50 +1,35 @@
 {%- include head-matter.html -%}
+{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+{%- assign tag_pages = site.collections | where: "label", "taglists" | map: "docs" | first -%}
 
+<body>
 <main>
-<article>
-
-<header>
-	<h1 class="post-title">{%- if page.nowPage -%}{{ site.categories.now[0].title }}{%- else -%}{{ page.title }}{%- endif -%}</h1>
-	<p class="post-author-and-time">
-	<a href="/" title="Home" rel="author" class="internal-link">Denys Smirnov</a>
-	
-	{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-	<span class="post-meta">{{ post.date | date: date_format }}</span>
-
-	<time datetime="{{ postDate | date: '%Y-%m-%d' }}"></time>
-	<!-- {%- unless page.category contains "english-guide" -%}
-	&nbsp;&middot;&nbsp;<time datetime="{{ postDate | date: '%Y-%m-%d' }}">
-	{%- unless page.custom-date %}{{ postDate | date: "%B" }} {{prettyDateOfPost}}{{ ordinalEnding }}, {{ postDate | date: "%Y" }}{%- else -%}{{ page.custom-date }}{%- endunless -%}</time>{% endunless %}</p> -->
-</header>
-
-{%- if page.categories contains "now" -%}
-	{%- include now-blurb.html -%}
-{%- endif -%}
-
-{%- if page.categories contains "english-guide" -%}
-	{%- include english_plug.html -%}
-{%- endif -%}
-
-{%- if page.categories contains "rss-club" -%}
-	{%- include rss-plug.html -%}
-{%- endif -%}
-
-{%- if page.categories contains "ukraine" -%}
-	{%- include ukraine-blurb.html -%}
-{%- endif -%}
-
-{{ content }}
-
-</article>
-
-{%- if page.categories contains "now" -%}
-	{%- include now-listing.html -%}
-{%- endif -%}
-
+	<article>
+		<header>
+			<h1 class="post-title">{{ page.title }}</h1>
+			<nav>
+				<a href="/" title="Home" rel="author" class="internal-link">{{ page.author | default: "Denys Smirnov"}}</a>&nbsp;|&nbsp;
+				<time datetime="{{ postDate | date: '%Y-%m-%d' }}">
+					{%- unless page.custom-date %}
+						{{ page.date | date: date_format }}
+					{%- else -%}
+						{{ page.custom-date | date: date_format }}
+					{%- endunless -%}
+				</time>
+				{%- for tag in page.tags -%}
+					{%- assign page = tag_pages | where: "main_tag", tag | first -%}
+					&nbsp;|&nbsp;
+					{%- unless page -%}
+					<span class="internal-link">{{ tag }}</span>
+					{%- else -%}
+					<a href="{{ page.url }}" title="{{ tag }}" class="internal-link">{{ tag }}</a>
+					{%- endunless -%}
+				{%- endfor -%}
+			</nav>
+		</header>
+		{{ content }}
+	</article>
 </main>
-
 {%- include footer.html -%}
-
 </body>
-
 </html>

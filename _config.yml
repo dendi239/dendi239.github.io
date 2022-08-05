@@ -30,8 +30,6 @@ github_username:  dendi239
 
 # Build settings
 theme: minima
-
-permalink: blog/:title
 show_drafts: true
 timezone: Europe/London
 
@@ -52,9 +50,17 @@ defaults:
       path: ""
       type: "pages"
     values:
-      layout: page    
+      layout: page
+  - scope:
+      path: ""
+      type: "taglists"
+    values:
+      layout: taglist
+      permalink: /tags/:title
 
 collections:
+  taglists:
+    output: true
   pages:
     output: true
 

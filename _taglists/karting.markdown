@@ -1,5 +1,4 @@
 ---
-layout:    taglist
 main_tag:  karting
 ---
 
@@ -13,7 +12,6 @@ Yet still, I had tons of online races, so you can discover results [there][kudos
 
 You can checkout some of my competitive results right at [sodiwseries][sodiwseries-account].
 Althgough, not every karting competition I participated at using that system, even though if they're using sodi karts.
-
 
 [sodiwseries-account]: https://www.sodiwseries.com/en-gb/drivers/smirnov-denys-86102.html
 [kudosprime-account]:  https://www.kudosprime.com/gts/stats.php?profile=11085687

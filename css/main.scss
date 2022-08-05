@@ -4,7 +4,7 @@
 $body-typeface: "Source Serif 4", Georgia, serif;
 $heading-typeface: "Source Sans 3", Helvetica, sans-serif; 
 $mono-typeface: Source Code, monospace;
-$text-width: 600px;
+$text-width: 800px;
 
 
 // Source Code  
@@ -158,7 +158,7 @@ summary {
 
 
 details {
-  p, {
+  p {
     padding-left: 1em;
   }
   ol, li {

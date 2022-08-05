@@ -1,14 +1,12 @@
 ---
 title: Blog
-description: "All of the posts in Derek’s Digital Garden"
-og-type: website
+description: "All of the posts in my blog"
 permalink: /blog
 nav: custom
 ---
 
-{% assign display-post-type = true %}
+<ul>
 {% for post in site.posts %}
-{%- unless post.categories contains "rss-club" or post.categories contains "unlisted" -%}
-{% include blog-listing.html %}
-{% endunless %}
+<li> {% include blog-listing.html %} </li>
 {% endfor %}
+</ul>

@@ -1,5 +1,4 @@
 ---
-layout:    taglist
 main_tag:  movie
 ---
 

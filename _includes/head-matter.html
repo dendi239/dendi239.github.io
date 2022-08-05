@@ -2,15 +2,15 @@
 <html {% if page.post-lang %}lang="{{page.post-lang}}" {% else %} lang="en-US" {% endif %}>
 
 <head>
-
     {% if page.no-index or page.categories contains "rss-club" %}<meta name="robots" content="noindex" />{% endif %}
     <meta charset="UTF-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>{{ page.title }}</title>
     <link rel='stylesheet' type='text/css' href='/css/main.css'>
-    {% if page.syntax %}<link rel='stylesheet' type='text/css' href='/css/code.css'>{% endif %}
-    <meta name="description" content="{% if page.description %}{{ page.description }}
-    {% else %}{{ site.description }}{% endif %}">
+    {% if page.syntax %}
+        <link rel='stylesheet' type='text/css' href='/css/code.css'>
+    {% endif %}
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta name="author" content="Denys Smirnov">
     <link rel="canonical" href="{% if page.canonical %}{{ site.url }}{{ page.canonical }}{% else %}{{ page.url | absolute_url }}{% endif %}">
     <meta name="generator" content="Jekyll" />

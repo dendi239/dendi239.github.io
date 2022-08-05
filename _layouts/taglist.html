@@ -1,28 +1,36 @@
----
-layout: page
----
+{%- include head-matter.html -%}
 
-<div class="tag_list">
-  {%- if page.main_tag -%}
-    <h1 class="page-heading">{{ page.main_tag | capitalize }}</h1>
-  {%- endif -%}
+<body>
 
-  {{ content }}
+  <main>
+    <article>
 
-  {%- if site.tags[page.main_tag].size > 0 -%}
-    <h2 class="post-list-heading"> Posts </h2>
-    <ul class="post-list">
-      {%- for post in site.tags[page.main_tag] -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta" style="text-align:left;">{{ post.date | date: date_format }}</span>
-        <span style="text-align:right;">
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </span>
-      </li>
-      {%- endfor -%}
-    </ul>
-  {%- endif -%}
-</div>
+      <header>
+        <h1 class="index-title">{{ page.main_tag }}</h1>
+        <nav>
+          {%- include page-nav.html -%}
+        </nav>
+      </header>
+
+      <div class="tag_list">
+        {{ content }}
+
+        {%- if site.tags[page.main_tag].size > 0 -%}
+        <h2 class="post-list-heading"> Posts </h2>
+        <ul class="post-list">
+          {%- for post in site.tags[page.main_tag] -%}
+          <li>
+            {% include blog-listing.html %}
+          </li>
+          {%- endfor -%}
+        </ul>
+        {%- endif -%}
+      </div>
+
+    </article>
+
+  </main>
+
+  {%- include footer.html -%}
+
+</body>
