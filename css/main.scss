@@ -247,6 +247,20 @@ ul, ol {
   padding-left: var(--line-height);
 }
 
+ul.task-list, ol.task-list {
+  list-style-type: none;
+}
+
+li.task-list-item {
+  margin: 0px;
+}
+
+input.task-list-item-checkbox {
+  margin-right: var(--line-height);
+  font-weight: bolder;
+  filter: invert(10%);
+}
+
 li + li, ul li ul, ul li ul li {
   margin: calc(.5 * var(--line-height)) 0 0 0;
 }
