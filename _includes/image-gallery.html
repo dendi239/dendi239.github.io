@@ -1,0 +1,65 @@
+<style>
+    /* .box {
+        flex-basis: 20%;
+        width: 100%;
+        padding: 10px;
+        margin: 20px;
+    } */
+
+    .img-gallery {
+        float: center;
+        width: 100%;
+        height: 100px;
+        overflow: auto;
+        object-fit: cover;
+        transform: scale(1);
+        transition: all 0.3s ease-in-out;
+        text-align: center
+    }
+    .image-gallery ul {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+
+    .image-gallery a img {
+        object-fit: cover;
+        width: 150px;
+        height: 150px;
+    }
+
+    .image-gallery a {
+        float: left;
+        display: block;
+        margin: 0 0 1% 1%;
+        /* grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); */
+        justify-content: center;
+        padding: 0px;
+        text-align: center;
+        /* text-decoration: none !important; */
+    }
+
+    /* .image-gallery a span {
+        display: block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 3px 0;
+    }  */
+</style>
+
+<div class="image-gallery">
+    <ul>
+        {% for file in site.static_files %}
+        {% if file.path contains include.folder %}
+        {% if file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.JPG' or file.extname == '.JPEG' %}
+        {% assign filenameparts = file.path | split: "/" %}
+        {% assign filename = filenameparts | last | replace: file.extname,"" %}
+        <a href="{{ file.path }}" title="{{ filename }}" class="lightbox-image">
+            <img src="{{ file.path }}" alt="{{ filename }}" />
+            <span>{{ filename }}</span>
+        </a>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
